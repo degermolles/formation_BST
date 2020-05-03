@@ -7,7 +7,7 @@ class BST():
     
     # constructreur
     def __init__(self,l):
-        self.L = l # l est une liste, c'est notre tas
+        self.L = self.tas(l) # l est un tas.
 
     
     @property 
@@ -16,6 +16,7 @@ class BST():
         '''
         return len(self.L)
 
+    @property 
     def hauteur(self):
         ''' Hauteur du tas
         '''
@@ -30,7 +31,7 @@ class BST():
         ''' D renvoie l'indice du noeud fils Droit étant donné l'indice du noeud
         A définir, voir wikipédia https://fr.wikipedia.org/wiki/Arbre_binaire
         '''
-        pass
+        return(2*i+2)
     
     def P(self, i):
         ''' P renvoie l'indice du noeud Père étant donné l'indice du noeud
@@ -38,8 +39,12 @@ class BST():
         '''
         pass
 
-
-
+    def tas(self, l):
+        '''tas converti une list en un tas
+        Pour l'instant, elle ne fait rien (voir question 6b), elle retourne juste la liste
+        que nous considérerons comme un tas (pour l'instant...)
+        '''
+        return(l)
 
 
 # Fonction principale, Les fonctions que l'on va appeler ici dévront être définie avant.
@@ -47,11 +52,12 @@ class BST():
 if __name__ == '__main__':
     print("Début!")
 
-    # Example d'arbre
-    arbre = BST([1,23,45,35,56])
+    # Example d'un
+    notreTas = [1,23,45,35,56]
+    print(notreTas)
+    arbre = BST(notreTas)
     print("Nombre de noeud: ", arbre.n)
     # Point 1.
-    print("Hauteur maximum et minimal d'un arbre: ", arbre.hauteur())
-
+    print("Hauteur d'un tas: ", arbre.hauteur)
 
     print("Fin!")
