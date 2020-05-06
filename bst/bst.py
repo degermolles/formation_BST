@@ -1,43 +1,58 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+###########################################################################################
+#################################### Zone import modules ##################################
 import math
-
-
+###########################################################################################
+#################################### Création d'une classe ################################
 class BST():
     
     # constructreur
     def __init__(self,l):
         self.L = self.tas(l) # l est un tas.
+############################################################################################
+	@property 
+    def n(self): 
+        if self.root is None:    # Nombre de noeud dans notre arbre
+			return 0
+		stack = Stack()
+		stack.push(self.root) 
+		
+		size = 1
+		while stack:
+		node = stack.pop
+		if node.left:
+			n += 1
+			stack.push(node.left)
+		if node.right:
+			n += 1
+			stack.push(node.right)
+		return len(self.L)
 
-    
     @property 
-    def n(self):
-        ''' Nombre de noeud dans notre arbre
-        '''
-        return len(self.L)
-
-    @property 
-    def hauteur(self):
-        ''' Hauteur du tas
-        '''
+    def hauteur(self, node):
+        if node is None:  # Hauteur du tas
+			return - 1
+		g_hauteur = hauteur(node.left)
+        d_hauteur = hauteur(node.right)
         return(int(math.floor(math.log(self.n,2))))
     
     def G(self, i):
-        ''' G renvoie l'indice du noeud fils gauche étant donné l'indice du noeud
-        '''
+        if G < self.i:  # G renvoie l'indice du noeud fils gauche étant donné l'indice du noeud
+       
         return(2*i+1)
     
     def D(self, i):
-        ''' D renvoie l'indice du noeud fils Droit étant donné l'indice du noeud
-        A définir, voir wikipédia https://fr.wikipedia.org/wiki/Arbre_binaire
-        '''
+        if D > self.i:  # D renvoie l'indice du noeud fils Droit étant donné l'indice du noeud
+						# A définir, voir wikipédia https://fr.wikipedia.org/wiki/Arbre_binaire
+        
         return(2*i+2)
     
     def P(self, i):
-        ''' P renvoie l'indice du noeud Père étant donné l'indice du noeud
-        A définir, voir wikipédia https://fr.wikipedia.org/wiki/Arbre_binaire
-        '''
-        pass
+        if P(0) // i = 0:  # P renvoie l'indice du noeud Père étant donné l'indice du noeud
+							# A définir, voir wikipédia https://fr.wikipedia.org/wiki/Arbre_binaire
+        
+        return (int(math.floor(i-1)/2))
 
     def tas(self, l):
         '''tas converti une list en un tas
@@ -47,7 +62,7 @@ class BST():
         return(l)
 
 
-# Fonction principale, Les fonctions que l'on va appeler ici dévront être définie avant.
+# Fonction principale, Les fonctions que l'on va appeler ici devront être définie avant.
 # J'ai obté pour l'approche Class comme tu semblais le préférer
 if __name__ == '__main__':
     print("Début!")
