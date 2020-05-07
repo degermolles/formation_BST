@@ -53,6 +53,26 @@ class BST():
 							# A définir, voir wikipédia https://fr.wikipedia.org/wiki/Arbre_binaire
         
         return (int(math.floor(i-1)/2))
+		
+	def ajout(self, l): # On ajoute un élément dans un tas
+		nouveau = self.l
+		file = []
+		file.append(self)
+		while (len(file) > 0):
+			node = file.pop(o)   # On retire l'élément en tête de la file
+			
+			if node.gauche is None:  # si l'enfant gauche est vide
+				none.gauche = nouveau
+				break
+				
+			elif node.droit is None:  # si l'enfant droit est vide
+				none.droit = nouveau
+				break
+				
+			else:
+				file.append(node.gauche)
+				file.append(node.droit)
+				
 
     def tas(self, l):
         '''tas converti une list en un tas
