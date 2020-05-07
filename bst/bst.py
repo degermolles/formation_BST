@@ -72,7 +72,23 @@ class BST():
 			else:
 				file.append(node.gauche)
 				file.append(node.droit)
+	
+	def sup(self, l):  # On supprime un élément
+		assert self != None
+		extreme, parent = noeud.extreme(self)
+		elm = TrouverNoeud(self, l)
+		
+		if elm is not None:
+			elm.val = extreme.val
+			
+		
+			# Supprimer le noeud le plus profond à l'extrème droite
+			if parent.gauche == extreme.val:
+				parent.gauche = None
 				
+			else:
+				parent.droit = None
+	
 
     def tas(self, l):
         '''tas converti une list en un tas
